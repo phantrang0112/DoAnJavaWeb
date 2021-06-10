@@ -1,6 +1,15 @@
 eclipse.preferences.version=1
+encoding//WebContent/Admin/AccountAdmin.jsp=UTF-8
+encoding//WebContent/Admin/AddProduct.jsp=UTF-8
+encoding//WebContent/Admin/DSKhachHang.jsp=UTF-8
+encoding//WebContent/Admin/DSNhanVien.jsp=UTF-8
+encoding//WebContent/Admin/HomeAdmin.jsp=UTF-8
+encoding//WebContent/Admin/Product.jsp=UTF-8
+encoding//WebContent/Admin/ThemNhanVien.jsp=UTF-8
+encoding//WebContent/Home.jsp=UTF-8
 encoding//WebContent/User/Account.jsp=UTF-8
 encoding//WebContent/User/Cart.jsp=UTF-8
 encoding//WebContent/User/Contact.jsp=UTF-8
 encoding//WebContent/User/HomeUser.jsp=UTF-8
 encoding//WebContent/User/MenuUser.jsp=UTF-8
+encoding//WebContent/assets/image/img/ChiTietHoaDon.jsp=UTF-8

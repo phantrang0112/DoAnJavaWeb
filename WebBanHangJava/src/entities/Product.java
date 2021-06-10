@@ -10,11 +10,18 @@ public class Product {
 	private Date ngayNhap;
 	private String hinhSP;
 	private String trangThai;
-private String idLoai;
+	private String idLoai;
 
 	
-	public Product(String idSP, String tenSP, int soLuong, int gia, Date ngayNhap, String hinhSP, String trangThai,
-		String idLoai) {
+	public String getIdLoai() {
+		return idLoai;
+	}
+
+	public void setIdLoai(String idLoai) {
+		this.idLoai = idLoai;
+	}
+
+	public Product(String idSP, String tenSP, int soLuong, int gia, Date ngayNhap, String hinhSP, String trangThai,String idLoai) {
 	super();
 	this.idSP = idSP;
 	this.tenSP = tenSP;
@@ -25,6 +32,16 @@ private String idLoai;
 	this.trangThai = trangThai;
 	this.idLoai = idLoai;
 }
+	
+	public Product(String tenSP, int soLuong, int gia, Date ngayNhap, String trangThai) {
+		super();
+		this.tenSP = tenSP;
+		this.soLuong = soLuong;
+		this.gia = gia;
+		this.ngayNhap = ngayNhap;
+		this.trangThai = trangThai;
+	}
+
 	public Product(String tenSP, int soLuong, int gia, Date ngayNhap, String hinhSP, String trangThai) {
 		super();
 		this.tenSP = tenSP;

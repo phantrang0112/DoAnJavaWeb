@@ -11,7 +11,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tiệm của Trang</title>
+    <!-- Favicons -->
+    <link href="assets/image/img/logoTittle.png" rel="icon">
+    <link href="assets/image/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -52,7 +55,7 @@
                             <li><a href="<c:url value="ProductServlet?task=Product"/>">Sản phẩm</a>
                                
                             </li>
-                            <li><a href="contact.html">liên hệ</a></li>
+                            <li><a href="<c:url value="AccountServlet?task=contact"/>">liên hệ</a></li>
                             <li style="padding:0px ;  margin-left: 70px;" class="icon icon_account drop-down">
 
                                 <a href="<c:url value="DetailAccount"/>">
@@ -131,14 +134,23 @@
             </tbody>
             <tfoot>
                 <tr class="visible-xs">
+                <%if(request.getAttribute("totalCart")!=null) 	{ %>
                     <td class="text-center"><strong>Tổng <%=request.getAttribute("totalCart")%>  đ</strong>
                     </td>
+                    <%} else{ %>
+                    <td class="text-center"><strong>Tổng 0đ</strong>
+                    </td>
+                    <%} %>
                 </tr>
                 <tr>
                     <td><a href="<c:url value="ProductServlet?task=Product"/>" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                     </td>
                     <td colspan="2" class="hidden-xs"> </td>
+                    <%if(request.getAttribute("totalCart")!=null) 	{ %>
                     <td class="hidden-xs text-center"><strong>Tổng tiền <%=request.getAttribute("totalCart")%> đ</strong></td>
+                    <%} else{ %>
+                   <td class="hidden-xs text-center"><strong>Tổng tiền 0đ</strong></td>
+                    <%} %>
                   <td>  <a href="CartServlet?action=removeall"> Xóa tất cả</a></td>
                     <td><a href="" class="btn btn-success btn-block"><input style="background-color:transparent; outline: none;border: none;" type="submit" value="Mua Hang"> </i></a>
                     </td>
@@ -152,32 +164,22 @@
 
 </body>
 <footer style="margin-top: 200px" ">
-    <div class="footer-top ">s
+    <div class="footer-top ">
         <div class="container ">
             <div class="row ">
-                <div class="col-md-4 col-lg-4 footer-about wow fadeInUp ">
-                    <img class="logo-footer " src="assets/img/logo.png " alt="logo-footer " data-at2x="assets/img/logo.png ">
+                <div class="col-md-6 col-lg-6 footer-about wow fadeInUp ">
+                    <img class="logo-footer " src="./assets/image/img/LLogo.png " style="height: 100px;width: 300px" alt="logo-footer " data-at2x="assets/img/logo.png ">
                     <p>
                         Hãy đến với chúng tôi. Chúng tôi sẽ mang đến cho bạn những gì tuyệt vời nhất
                     </p>
-                    <p><a href="# ">TrangNho</a></p>
+               
                 </div>
-                <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown ">
+                <div class="col-md-5 col-lg-5 offset-lg-1 footer-contact wow fadeInDown ">
                     <h3>Liên hệ:</h3>
-                    <p><i class="fas fa-map-marker-alt "></i> 61/7 Đường 104, Tăng Nhơn Phú A,Q9</p>
-                    <p><i class="fas fa-phone "></i> Phone: 0327248445</p>
-                    <p><i class="fas fa-envelope "></i> Email: <a href="mailto:hello@domain.com ">phantrang011220@gmail.com</a></p>
-                    <p><i class="fab fa-skype "></i> Skype: phantrang0112</p>
-                </div>
-                <div class="col-md-4 col-lg-3 footer-social wow fadeInUp ">
-                    <h3>Follow us</h3>
-                    <p>
-                        <a href="# "><i class="fab fa-facebook "></i></a>
-                        <a href="# "><i class="fab fa-twitter "></i></a>
-                        <a href="# "><i class="fab fa-google-plus-g "></i></a>
-                        <a href="# "><i class="fab fa-instagram "></i></a>
-                        <a href="# "><i class="fab fa-pinterest "></i></a>
-                    </p>
+                    <p><i class="nc-icon nc-favourite-28 "></i> 61/7 Đường 104, Tăng Nhơn Phú A,Q9</p>
+                    <p><i class="nc-icon nc-favourite-28  "></i> Phone: 0327248445</p>
+                    <p><i class="nc-icon nc-favourite-28  "></i> Email: <a href="mailto:hello@domain.com ">phantrang011220@gmail.com</a></p>
+                    <p><i class="nc-icon nc-favourite-28 "></i> Skype: phantrang0112</p>
                 </div>
             </div>
         </div>

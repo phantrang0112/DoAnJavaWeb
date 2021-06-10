@@ -6,6 +6,28 @@ public class HoaDon {
  private int idHD;
 private int idUser;
 private Date ngayLap;
+private int tong;
+private int stt;
+public int getStt() {
+	return stt;
+}
+public void setStt(int stt) {
+	this.stt = stt;
+}
+public HoaDon(int idHD, int idUser, Date ngayLap, int tong, int stt) {
+	super();
+	this.idHD = idHD;
+	this.idUser = idUser;
+	this.ngayLap = ngayLap;
+	this.tong = tong;
+	this.stt = stt;
+}
+public int getTong() {
+	return tong;
+}
+public void setTong(int tong) {
+	this.tong = tong;
+}
 public HoaDon(int idUser, java.sql.Date ngayLap) {
 	super();
 	this.idUser = idUser;
@@ -22,6 +44,13 @@ public int getIdUser() {
 }
 public void setIdUser(int idUser) {
 	this.idUser = idUser;
+}
+public HoaDon(int idHD, int idUser, Date ngayLap, int tong) {
+	super();
+	this.idHD = idHD;
+	this.idUser = idUser;
+	this.ngayLap = ngayLap;
+	this.tong = tong;
 }
 public Date getNgayLap() {
 	return ngayLap;

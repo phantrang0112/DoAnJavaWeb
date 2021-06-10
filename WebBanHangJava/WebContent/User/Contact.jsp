@@ -60,7 +60,7 @@
 
                                 </ul>
                             </li>
-                            <li><a href="contact.html">liên hệ</a></li>
+                            <li><a href="<c:url value="AccountServlet?task=contact"/>">liên hệ</a></li>
                             <li style="padding:0px ;  margin-left: 70px;" class="icon icon_account drop-down">
 
                                 <a href="<c:url value="DetailAccount"/>">
@@ -197,29 +197,19 @@
     <div class="footer-top ">
         <div class="container ">
             <div class="row ">
-                <div class="col-md-4 col-lg-4 footer-about wow fadeInUp ">
-                    <img class="logo-footer " src="assets/footer/assets/img/logo.png " alt="logo-footer " data-at2x="assets/img/logo.png ">
+                <div class="col-md-6 col-lg-6 footer-about wow fadeInUp ">
+                    <img class="logo-footer " src="./assets/image/img/LLogo.png " style="height: 100px;width: 300px" alt="logo-footer " data-at2x="assets/img/logo.png ">
                     <p>
-                        We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
+                        Hãy đến với chúng tôi. Chúng tôi sẽ mang đến cho bạn những gì tuyệt vời nhất
                     </p>
-                    <p><a href="# ">Our Team</a></p>
+               
                 </div>
-                <div class="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown ">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt "></i> Via Rossini 10, 10136 Turin Italy</p>
-                    <p><i class="fas fa-phone "></i> Phone: (0039) 333 12 68 347</p>
-                    <p><i class="fas fa-envelope "></i> Email: <a href="mailto:hello@domain.com ">hello@domain.com</a></p>
-                    <p><i class="fab fa-skype "></i> Skype: you_online</p>
-                </div>
-                <div class="col-md-4 col-lg-3 footer-social wow fadeInUp ">
-                    <h3>Follow us</h3>
-                    <p>
-                        <a href="# "><i class="fab fa-facebook ">facebook</i></a>
-                        <a href="# "><i class="fab fa-twitter "></i></a>
-                        <a href="# "><i class="fab fa-google-plus-g "></i></a>
-                        <a href="# "><i class="fab fa-instagram "></i></a>
-                        <a href="# "><i class="fab fa-pinterest "></i></a>
-                    </p>
+                <div class="col-md-5 col-lg-5 offset-lg-1 footer-contact wow fadeInDown ">
+                    <h3>Liên hệ:</h3>
+                    <p><i class="nc-icon nc-favourite-28 "></i> 61/7 Đường 104, Tăng Nhơn Phú A,Q9</p>
+                    <p><i class="nc-icon nc-favourite-28  "></i> Phone: 0327248445</p>
+                    <p><i class="nc-icon nc-favourite-28  "></i> Email: <a href="mailto:hello@domain.com ">phantrang011220@gmail.com</a></p>
+                    <p><i class="nc-icon nc-favourite-28 "></i> Skype: phantrang0112</p>
                 </div>
             </div>
         </div>

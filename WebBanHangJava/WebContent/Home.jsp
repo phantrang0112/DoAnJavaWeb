@@ -1,10 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  <%@page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+ <title>Tiệm của Trang</title>
+    <!-- Favicons -->
+   
+   
+ <link href="assets/image/img/logoTittle.png" rel="icon">
+    <link href="assets/image/img/apple-touch-icon.png" rel="apple-touch-icon">
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,32 +46,33 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-		      	<h3 class="mb-4 text-center">Have an account?</h3>
+		      	<h3 class="mb-4 text-center">Tiệm của Trang</h3>
+		      	
 		      	<form action="AccountServlet?task=login" method="post" class="signin-form">
 		      		<div class="form-group">
-		      			<input type="text" class="form-control" placeholder="Username"  name="txtname" required>
+		      			<input type="text" class="form-control" placeholder="Tên đăng nhập"  name="txtname" required>
 		      		</div>
 		            <div class="form-group">
-		              <input id="password-field" type="password" class="form-control" placeholder="Password" name="txtpass" required>
+		              <input id="password-field" type="password" class="form-control" placeholder="Mật khẩu" name="txtpass" required>
 		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 		            </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary submit px-3" value="login">Sign In</button>
+		            	<button type="submit" class="form-control btn btn-primary submit px-3" value="login">Đăng Nhập</button>
 		            </div>
 	            <div class="form-group d-md-flex">
 	            	<div class="w-50">
-		            	<label class="checkbox-wrap checkbox-primary">Remember Me
+		            	<label class="checkbox-wrap checkbox-primary">Nhớ mật khẩu
 									  <input type="checkbox" checked>
 									  <span class="checkmark"></span>
 									</label>
 								</div>
 								<div class="w-50 text-md-right">
-									<a href="#" style="color: #fff">Forgot Password</a>
+									<a href="<c:url value="AccountServlet?task=DangKi"/>" style="color: #fff">Đăng ký</a>
 									
 								</div>
 	            </div>
 	          </form>
-	          <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+	          <p class="w-100 text-center">&mdash;Đăng nhập băng &mdash;</p>
 	          <div class="social d-flex text-center">
 	          	<a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
 	          	<a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
