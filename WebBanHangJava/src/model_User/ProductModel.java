@@ -59,6 +59,36 @@ public class ProductModel {
 		return list;
 
 	}
+	public ArrayList<Item> getlistSearch(String search) {
+		ArrayList<Item> list = new ArrayList<Item>();
+		Connection cnConnection = new MyConnect().getcn();
+		if (cnConnection == null) {
+			return null;
+		}
+		try {
+			String sqlString = "Select SanPham.* ,LoaiSanPham.filter from SanPham,LoaiSanPham where SanPham.idLoai=LoaiSanPham.idLoai and tenSP like ?";
+			PreparedStatement pStatement = cnConnection.prepareStatement(sqlString);
+			pStatement.setString(1, "%"+search+"%");
+			ResultSet rSet = pStatement.executeQuery();
+			
+			while(rSet.next()) {
+				Product temP = new Product(rSet.getString(1), rSet.getString(2), rSet.getInt(3), rSet.getInt(4),rSet.getDate(5), rSet.getString(6), rSet.getString(7), rSet.getString(8));
+				Item item = new Item(temP, rSet.getString(9));
+				list.add(item);
+				System.out.println(item.getProduct().getHinhSP() + item.getProduct().getIdSP() + item.getFilter()+  rSet.getString(8));
+
+			}
+			
+			pStatement.close();
+			cnConnection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		return list;
+
+	}
+
 
 	public ArrayList<Item> getlistFilter() {
 		ArrayList<Item> list = new ArrayList<Item>();

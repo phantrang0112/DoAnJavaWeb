@@ -194,8 +194,8 @@
                                         </label>
                                     </div>
                                     <div class="row">
-                                        <input type="text" style="margin-left: 18px;" name="txtname" placeholder="Your name..." class="c-form-name col-6 form-control" id="c-form-name">
-                                        <input type="password" style="margin-left: 20px;" name="txtpass" placeholder="Your name..." class="c-form-name col-5 form-control" id="c-form-name">
+                                        <input type="text" style="margin-left: 18px;" name="txtname" placeholder="Tên tài khoản" class="c-form-name col-6 form-control" id="c-form-name">
+                                        <input type="password" style="margin-left: 20px;" name="txtpass" placeholder=" Mật khẩu" class="c-form-name col-5 form-control" id="c-form-name">
                                     </div>
                                 </div>
                                 <div class="form-group">

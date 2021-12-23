@@ -1,15 +1,14 @@
-<%@page import="model_User.ProductTypeModel"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
- <%@page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  <%@page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    
+    <link rel="apple-touch-icon" sizes="76x76" href="./assetsAdmin/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="./assetsAdmin/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <title>Tiệm của Trang</title>
+    <title>Tiệm của Trang</title>
     <!-- Favicons -->
    
    
@@ -19,25 +18,11 @@
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-
     <!-- CSS Files -->
     <link href="./assetsAdmin/css/bootstrap.min.css" rel="stylesheet" />
     <link href="./assetsAdmin/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="./assetsAdmin/demo/demo.css" rel="stylesheet" />
-    <!-- Font-->
-    <link href="./AddPro/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="./AddPro/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-    <link href="./AddPro/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="./AddPro/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
-</head>
 </head>
 
 <body class="">
@@ -59,7 +44,7 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li>
+                    <li class="active">
                         <a href="<c:url value="HomeServletAdmin?task=home"/>">
                             <i class="nc-icon nc-bank"></i>
                             <p>Trang Chủ</p>
@@ -98,7 +83,7 @@
                             <p>Sản Phẩm</p>
                         </a>
                     </li>
-                    <li  class="active">
+                    <li>
                         <a href="<c:url value="ProductServletAdmin?task=ThemSanPham"/>">
                             <i class="nc-icon nc-simple-add"></i>
                             <p>Thêm Sản Phẩm</p>
@@ -177,79 +162,49 @@
                 </div>
             </nav>
             <div class="content">
+		        <div class="col-12 row" style="margin-bottom: 20px;">
+		            <div class="col-3">
+		                <a href="<c:url value="HoaDonServlet?task=HoaDonAdmin"/>"> DS Hóa Đơn</a>
+		                <span style="width: 3px;  border: 1px solid rgb(146, 236, 169); margin-right: 5px;"></span>
+		                <a href="product.html">Chi Tiết Hóa Đơn</a>
+		            </div>
+		        </div>
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-3 c-form-box wow fadeInUp">
-                        <div class="c-form-bottom">
-                            <form role="form" action="ProductServletAdmin?task=insertProduct" method="post">
-                            <h5 style="text-align: center; color: red"><%=request.getAttribute("thong bao") %></h5>
-                                <div class="form-group">
-                                    <div class="row">
-                                        <label for="c-form-name" class="col-6">
-                                            <span class="label-text">Mã sản phẩm</span> 
-                                            <span class="contact-error"></span>
-                                        </label>
-                                        <label for="c-form-name" class="col-6">
-                                            <span class="label-text">Tên Sản Phẩm</span> 
-                                            <span class="contact-error"></span>
-                                        </label>
-                                    </div>
-                                    <div class="row">
-                                        <input type="text" style="margin-left: 18px;" name="txtIdSP" placeholder="Mã Sản Phẩm" class="col-6 form-control" id="c-form-name">
-                                        <input type="text" style="margin-left: 20px;" name="txtTenSP" placeholder="Tên Sản Phẩm" class="c-form-name col-5 form-control" id="c-form-name">
-                                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title"> Chi Tiết Hóa Đơn</h4>
+                                <h5>Mã hóa đơn:<%=request.getParameter("idHD") %></h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class=" text-primary">
+                                        	<th>stt</th>
+                                            <th>Mã Sản Phẩm </th>
+                                            <th> tên Sản Phẩm</th>
+                                            <th>Số Lượng</th>
+                                            <th class="text-right">Giá </th>
+                                            <th></th>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach var="p" items="${ListCTHD }">
+                                            <tr>
+                                            	<td>${p.stt }</td>
+                                                <td>${p.idSP }</td>
+                                                <td>${p.tenSP }</td>
+                                                <td> ${p.soLuong }</td>
+                                                <td class="text-right">${p.gia} </td>
+                                                <td class="actions" data-th="">
+                                                    <a style="color: white;" class=" btn btn-info "><i class="fa fa-edit "></i></a>
+                                                    <a href="ChiTietHoaDonServlet?task=deleteIdSP&idSP=${p.idSP }&idHD=${p.idHD}" style="color: white; " class="btn btn-danger "><i class="fa fa-trash-o "></i></a>
+                                                </td>
+                                            </tr>
+										</c:forEach>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div class="form-group">
-                                    <label for="c-form-name">
-                                            <span class="label-text">Số lượng</span> 
-                                            <span class="contact-error"></span>
-                                        </label>
-                                    <input type="text" name="txtSoLuong" placeholder="Số lượng" class="c-form-name form-control" id="c-form-name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="c-form-email">
-                                            <span class="label-text">giá:</span> 
-                                            <span class="contact-error"></span>
-                                        </label>
-                                    <input type="text" name="txtGiaSP" placeholder="Giá" class=" form-control" id="c-form-email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="c-form-subject">
-                                        <span class="label-text">Ngày Nhập</span> 
-                                        <span class="contact-error"></span>
-                                    </label>
-                                    <input class="c-form-subject form-control" type="date" id="" name="txtNgayNhap">
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="c-form-name">
-                                            <span class="label-text">Hình sản Phẩm</span> 
-                                            <span class="contact-error"></span>
-                                        </label>
-                                    <div class="row">
-                                        <input type="text" style="margin-left: 18px;" placeholder="Hình sản phẩm" name="txtHinhSP" class="c-form-email form-control col-8" id="c-form-email">
-                                        <input type="submit" style="margin-left: 18px;" class="btn col-3" value="upLoad">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="c-form-trangthai">
-                                            <span class="label-text">Trạng thái</span> 
-                                            <span class="contact-error"></span>
-                                        </label>
-                                    <input type="text" name="txtTrangThai" placeholder="Trạng Thái" class="c-form-trangthai form-control" id="c-form-email">
-                                </div>
-                                <div class="form-group">
-                                <%ProductTypeModel loai=new ProductTypeModel(); %>
-                                    <label for="exampleFormControlSelect1">Tên Loại</label>
-                                    <select  name="txtTenLoai" class="form-control" id="txtTenLoai">
-                                    <c:forEach var="p" items="<%=loai.getlist() %>">
-                                     <option>${p.tenLoai}</option>
-                                    </c:forEach>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn">Thêm sản phẩm</button>
-
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,8 +212,7 @@
         </div>
     </div>
 
-
-
+    <!--   Core JS Files   -->
     <script src="./assetsAdmin/js/core/jquery.min.js "></script>
     <script src="./assetsAdmin/js/core/popper.min.js "></script>
     <script src="./assetsAdmin/js/core/bootstrap.min.js "></script>

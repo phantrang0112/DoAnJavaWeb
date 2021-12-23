@@ -167,6 +167,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title"> Danh sách Khách Hàng</h4>
+                                <h5 style="text-align: center; color: red"><%=request.getAttribute("thong bao") %></h5>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

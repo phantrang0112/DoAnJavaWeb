@@ -84,6 +84,7 @@
     <main id="main">
         <section id="portfolio" class="section-bg">
             <div class="container" data-aos="fade-up">
+            <form action="ProductServlet?task=Search" method="post"">
                 <div class="col-12 row">
                     <div class="col-3">
                         <a href="<c:url value="AccountServlet?task=home"/>"> Trang chủ</a>
@@ -91,19 +92,28 @@
                         <a href="<c:url value="ProductServlet?task=Product"/>">Sản phẩm</a>
                     </div>
                      <div class="col-8">
+                    
                         <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+                        
                             <div class="input-group">
-                                <input type="search" placeholder="Nhập sản phẩm bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+                                <input type="search" placeholder="Nhập sản phẩm bạn cần tìm?" name="txtSearch" aria-describedby="button-addon1" class="form-control border-0 bg-light">
                                 <div class="input-group-append">
                                     <button id="button-addon1" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
                                 </div>
                             </div>
+                            
+                           
                         </div>
                     </div>
+                    
                 </div>
+                <h5 style="text-align: center; color: red"><%=request.getAttribute("thong bao") %></h5>
                 <header class="section-header">
                     <h3 class="section-title">Sản phẩm</h3>
+                    
                 </header>
+                </form>
+                 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class=" col-12 ">
                         <ul id="portfolio-flters">

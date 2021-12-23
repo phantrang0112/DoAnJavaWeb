@@ -183,7 +183,7 @@
                                         <tbody>
                                         <c:forEach var="p" items="${ListNV}">
                                             <tr>
-                                             <form action="AccounServeletAdmin?task=updateNhanVien&idUserUpdateNV=${p.idUser }" method="post"  >
+                                             <form action="AccountServeletAdmin?task=updateNhanVien&idUserUpdateNV=${p.idUser }" method="post"  >
                                                 <td><input style="border: none;" type="text" name="txtnameNv" value="${p.userName}"></td>
                                                 <td><input style="border: none;" type="password" name="txtpassNv" value="${p.passWord}"></td>
                                                 <td> <input style="border: none;" type="text" name="txtemailNv" value="${p.email}"></td>

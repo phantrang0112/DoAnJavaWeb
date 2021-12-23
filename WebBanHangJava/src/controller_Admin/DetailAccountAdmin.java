@@ -105,36 +105,35 @@ public class DetailAccountAdmin extends HttpServlet {
 				 page = "Admin/ThemNhanVien.jsp";
 			}
 		}
+		
+		HttpSession session = request.getSession();
+		System.out.println(userName + password);
+		if ((userName == "") || (password == "")) {
+			message = "Không được để trống tên đăng nhập hoặc mật khẩu.";
+			page = "Admin/AccountAdmin.jsp";
+		} else {
+			Account accounth = (Account) session.getAttribute("acccountHienTai");
+			Account accountUpdate = new Account(accounth.getIdUser(), userName, password, mail, sdt, accounth.getIdQuyen());
+			System.out.println("detail acccount" + accounth.getIdUser() + accounth.getEmail());
+			AccountModel_Admin accoutModel = new AccountModel_Admin(accountUpdate);
+			
+			if (chuoiString.equals("update")) {
+				int kq = accoutModel.updateAccountAdmin();
+				if (kq == 0) {
+					message = "update that bai";
+					page = "Admin/AccountAdmin.jsp";
+				} else {
+//					session.setAttribute("accountList", new AccoutModel().getList());
+					session.setAttribute("acccountHienTai",	new AccountModel_Admin().getAccountHienTai(userName, password, session));
+					page = "Admin/AccountAdmin.jsp";
+					message = "Cập nhật thành công";
+				}
+			}
+
+		}
+
 		request.setAttribute("thong bao", message);
 		request.getRequestDispatcher(page).forward(request, response);
-
-//		System.out.println(userName + password);
-//		if ((userName == "") || (password == "")) {
-//			message = "Không được để trống tên đăng nhập hoặc mật khẩu.";
-//			page = "Admin/AccountAdmin.jsp";
-//		} else {
-//			Account accounth = (Account) session.getAttribute("acccountHienTai");
-//			Account account = new Account(accounth.getIdUser(), userName, password, mail, sdt, accounth.getIdQuyen());
-//			System.out.println("detail acccount" + accounth.getIdUser() + accounth.getEmail());
-//			AccountModel_Admin accoutModel = new AccountModel_Admin(account);
-//			String chuoiString = request.getParameter("action");
-//			if (chuoiString.equals("update")) {
-//				int kq = accoutModel.updateAccountAdmin();
-//				if (kq == 0) {
-//					message = "update that bai";
-//					page = "Admin/AccountAdmin.jsp";
-//				} else {
-////					session.setAttribute("accountList", new AccoutModel().getList());
-//					session.setAttribute("acccountHienTai",	new AccountModel_Admin().getAccountHienTai(userName, password, session));
-//					page = "Admin/AccountAdmin.jsp";
-//					message = "Cập nhật thành công";
-//				}
-//			}
-//
-//		}
-//
-//		request.setAttribute("thong bao", message);
-//		request.getRequestDispatcher(page).forward(request, response);
 
 	}
 

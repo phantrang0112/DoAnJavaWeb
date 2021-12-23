@@ -157,7 +157,7 @@
                                 <h5 style="text-align: center; color: red"><%=request.getAttribute("thong bao") %></h5>
                             </div>
                             <div class="card-body">
-                                <form role="form" action="DetailAccountAdmin?action=update" method="post">
+                                <form role="form" action="DetailAccountAdmin?task=update" method="post">
                                 <% Account accAdmin= (Account)session.getAttribute("acccountHienTai"); %>
                                     <div class="row">
                                         <div style="margin-left: 14px;" class="col-md-5 px-1">
@@ -169,7 +169,7 @@
                                         <div style="margin-left:191px;" class="col-md-5 pl-1">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Mật Khẩu</label>
-                                                <input type="password" name="txtpassword" class="form-control" placeholder="Mật Khẩu">
+                                                <input type="password" name="txtpass" class="form-control" placeholder="Mật Khẩu">
                                             </div>
                                         </div>
                                     </div>
